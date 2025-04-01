@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+  <%- include("partials/navbar") %>
+    <h5>Please login below</h5>
+    <form method="post" action="/login">
+        <label>Username: </label>
+        <input name="username" type="text" required> 
+        <label>Password: </label>
+        <input name="password" type="password" required>
+        <button type="submit">Login</button>
+        <% if (errorMsg) { %>
+            <br/><h5>
+                <%= errorMsg %> &nbsp;</h5>
+            </h5>
+        <% } %>
+    </form>
+</body>
+</html>
